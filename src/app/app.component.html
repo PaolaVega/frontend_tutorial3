@@ -2,9 +2,6 @@
   <nav class="navbar navbar-light" style="background-color: #4f8071;">
     <a href="#" class="navbar-brand">Preventip</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/home" class="nav-link" routerLink="home"> Inicio </a>
-      </li>
       <li class="nav-item" *ngIf="showAdminBoard">
         <a href="/admin" class="nav-link" routerLink="admin">admin</a>
       </li>
@@ -18,9 +15,6 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a href="/register" class="nav-link" routerLink="register">Registro</a>
-      </li>
-      <li class="nav-item">
         <a href="/login" class="nav-link" routerLink="login">Inicio de sesión</a>
       </li>
     </ul>
@@ -30,7 +24,7 @@
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">LogOut</a>
+        <a href class="nav-link" (click)="logout()">Cerrar sesión</a>
       </li>
     </ul>
   </nav>

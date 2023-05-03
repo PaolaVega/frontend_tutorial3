@@ -1,0 +1,37 @@
+<div class="container">
+    <h4>Historial de mediciones</h4>
+
+    <table class="table table-hover text-center">
+        <thead>
+          <tr>
+            <th scope="col">Rtimo cardiaco</th>
+            <th scope="col">Frecuencia respiratoria</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Altura</th>
+            <th scope="col">BMI</th>
+            <th scope="col">Saturación oxígeno</th>
+            <th scope="col">Temperatura</th>
+            <th scope="col">Presión sanguínea</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listProducts"  class="table-active">
+            <th>{{item.Ritmo}}</th>
+            <td>{{item.Frec}}</td>
+            <td>{{item.Peso}}</td>
+            <td>{{item.Altura}}</td>
+            <td>{{item.BMI}}</td>
+            <td>{{item.Saturacion}}</td>
+            <td>{{item.Temp}}</td>
+            <td>{{item.Presion}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+</div>
+
+
+
