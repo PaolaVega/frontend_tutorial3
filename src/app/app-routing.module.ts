@@ -13,6 +13,8 @@ import { Vital1Component } from './reporte/vital1/vital1.component';
 
 // { path: 'register', component: RegisterComponent },
 // 
+
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -20,7 +22,7 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  {path: 'dashboard', component: Vital1Component},
+  {path: 'dashboard/:userId', component: Vital1Component},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 

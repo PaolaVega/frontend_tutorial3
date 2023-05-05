@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../_services/data-client.service';
+import { DashboardService } from '../../_services/data-client.service';
 
 @Component({
   selector: 'app-vital1',
@@ -8,21 +8,20 @@ import { UserService } from '../../_services/data-client.service';
 })
 
 export class Vital1Component implements OnInit {
+  Id_cliente =  7; // Cambia esto por el ID del usuario que deseas mostrar
+  userRitmo!: number;
+  userFrecuencia!: number;
+  userPeso!: number;
+  userAltura!: number;
+  userBMI!: number;
+  userSaturacion!: number;
+  userTemperatura!: number;
+  userPresion!: number;
 
-  Id_cliente = 6; // Cambia esto por el ID del usuario que deseas mostrar
-  userRitmo: number | undefined;
-  userFrecuencia: number | undefined;
-  userPeso: number | undefined;
-  userAltura: number | undefined;
-  userBMI: number | undefined;
-  userSaturacion: number | undefined;
-  userTemperatura: number | undefined;
-  userPresion: number | undefined;
-
-  constructor(private userService: UserService) { }
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.userService.getUser(this.Id_cliente).subscribe(user => {
+    this.dashboardService.getDashboard(this.Id_cliente).subscribe(user => {
       this.userRitmo = user.ritmo_cardiaco;
       this.userFrecuencia = user.frecuencia_respiratoria;
       this.userPeso = user.peso;
@@ -33,4 +32,7 @@ export class Vital1Component implements OnInit {
       this.userPresion = user.presion_sanguinea_sistolica;
     });
   }
+
+  
+  
 }
