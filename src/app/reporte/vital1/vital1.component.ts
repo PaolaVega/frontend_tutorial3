@@ -22,17 +22,15 @@ export class Vital1Component implements OnInit {
 
   ngOnInit() {
     this.dashboardService.getDashboard(this.Id_cliente).subscribe(user => {
-      this.userRitmo = user.ritmo_cardiaco;
-      this.userFrecuencia = user.frecuencia_respiratoria;
-      this.userPeso = user.peso;
-      this.userAltura = user.altura;
-      this.userBMI = user.indice_masa_corporal;
-      this.userSaturacion = user.saturacion_oxigeno;
-      this.userTemperatura = user.temperatura;
-      this.userPresion = user.presion_sanguinea_sistolica;
+      console.log("Just confirming I'm actually getting here", user)
+      this.userRitmo = user[1].ritmo_cardiaco;
+      this.userFrecuencia = user[1].frecuencia_respiratoria;
+      this.userPeso = user[1].peso;
+      this.userAltura = user[1].altura;
+      this.userBMI = user[1].indice_masa_corporal;
+      this.userSaturacion = user[1].saturacion_oxigeno;
+      this.userTemperatura = user[1].temperatura;
+      this.userPresion = user[1].presion_sanguinea_sistolica;
     });
   }
-
-  
-  
 }

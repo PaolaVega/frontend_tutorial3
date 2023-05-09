@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  {path: 'dashboard/:userId', component: Vital1Component},
+  { path: 'register', component: RegisterComponent},
+  { path: 'dashboard/:userId', component: Vital1Component},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 

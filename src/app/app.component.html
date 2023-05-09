@@ -1,19 +1,11 @@
 <div id="app">
-  <nav class="navbar navbar-light" style="background-color: #4f8071;">
+  <nav class="navbar navbar-expand  navbar-light" style="background-color: #96c5ae;">
     <a href="#" class="navbar-brand">Preventip</a>
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">admin</a>
-      </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">mod</a>
-      </li>
-      <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">user</a>
-      </li>
-    </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Registro</a>
+      </li>
       <li class="nav-item">
         <a href="/login" class="nav-link" routerLink="login">Inicio de sesión</a>
       </li>
@@ -24,7 +16,7 @@
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">Cerrar sesión</a>
+        <a href class="nav-link" (click)="logout()">Salir</a>
       </li>
     </ul>
   </nav>
