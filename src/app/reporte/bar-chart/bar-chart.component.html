@@ -1,0 +1,13 @@
+<div class="container">
+    <h4>Grafica de mediciones. Paciente vs Población de la tercera Edad</h4>
+    
+     <canvas baseChart class="chart"
+            height="60"
+            [data]="barChartData"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [type]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+    </canvas>
+</div>

@@ -1,36 +1,34 @@
 <div class="container">
-    <h4>Historial de mediciones</h4>
+  <h4>Historial de mediciones</h4>
 
-    <table class="table table-hover text-center">
-        <thead>
-          <tr>
-            <th scope="col">Rtimo cardiaco</th>
-            <th scope="col">Frecuencia respiratoria</th>
-            <th scope="col">Peso</th>
-            <th scope="col">Altura</th>
-            <th scope="col">BMI</th>
-            <th scope="col">Saturación oxígeno</th>
-            <th scope="col">Temperatura</th>
-            <th scope="col">Presión sanguínea</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of listProducts"  class="table-active">
-            <th>{{item.Ritmo}}</th>
-            <td>{{item.Frec}}</td>
-            <td>{{item.Peso}}</td>
-            <td>{{item.Altura}}</td>
-            <td>{{item.BMI}}</td>
-            <td>{{item.Saturacion}}</td>
-            <td>{{item.Temp}}</td>
-            <td>{{item.Presion}}</td>
-          </tr>
-        </tbody>
-      </table>
-
-
-
-
+  <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Ritmo cardiaco</th>
+          <th scope="col">Frecuencia respiratoria</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Altura</th>
+          <th scope="col">BMI</th>
+          <th scope="col">Saturación oxígeno</th>
+          <th scope="col">Temperatura</th>
+          <th scope="col">Presión sanguínea</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of datos"  class="table-active">
+          <th>{{item.date_time}}</th>
+          <th>{{item.ritmo_cardiaco}}</th>
+          <td>{{item.frecuencia_respiratoria}}</td>
+          <td>{{item.peso}}</td>
+          <td>{{item.altura}}</td>
+          <td>{{item.indice_masa_corporal}}</td>
+          <td>{{item.saturacion_oxigeno}}</td>
+          <td>{{item.temperatura}}</td>
+          <td>{{item.presion_sanguinea_sistolica}}</td>
+        </tr>
+      </tbody>
+    </table>
 </div>
 
 

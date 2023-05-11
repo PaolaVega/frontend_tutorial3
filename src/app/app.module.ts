@@ -18,6 +18,9 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { AngularMaterialsModule } from './angular-materials/angular-materials';
 import { NavbarComponent } from './navbar/navbar.component';
 import { Vital1Component } from './reporte/vital1/vital1.component';
+import { BarChartComponent } from './reporte/bar-chart/bar-chart.component';
+import { TablaHistorialComponent } from './reporte/tabla-historial/tabla-historial.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,9 @@ import { Vital1Component } from './reporte/vital1/vital1.component';
     BoardModeratorComponent,
     BoardUserComponent,
     NavbarComponent,
-    Vital1Component
+    Vital1Component,
+    BarChartComponent,
+    TablaHistorialComponent
   ],
   imports: [
     BrowserModule,

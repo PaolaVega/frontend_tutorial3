@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'; 
 import { Medicion } from 'src/app/interfaces/medicion';
+import { DashboardService } from 'src/app/_services/data-client.service';
+import { StorageService } from 'src/app/_services/storage.service';
 
 @Component({
   selector: 'app-tabla-historial',
@@ -7,14 +9,16 @@ import { Medicion } from 'src/app/interfaces/medicion';
   styleUrls: ['./tabla-historial.component.css']
 })
 export class TablaHistorialComponent implements OnInit{
-  listProducts: Medicion[] = [
-    {Ritmo: 1, Frec: 2, Peso: 3, Altura: 4, BMI: 6, Saturacion: 7, Temp:8, Presion:9},
-    {Ritmo: 11, Frec: 12, Peso: 13, Altura: 14, BMI: 16, Saturacion: 17, Temp:18, Presion:19},
-  ]
+  datos: any = [];
+  id_cliente!: number;
   
-
-  constructor() { }
+  constructor(private dashboardService: DashboardService, private storageService: StorageService) { }
 
   ngOnInit(): void {
+    this.id_cliente = this.storageService.getUser().id;
+    this.dashboardService.getDashboard(this.id_cliente).subscribe(res => {
+      this.datos = res;
+    });
   }
+
 }
