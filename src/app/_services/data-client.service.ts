@@ -13,12 +13,21 @@ export class DashboardService {
 
  // Cambia esto por la URL de tu API
  private apiUrl = 'http://localhost:8080/api/test/vitals';
+ private apiUrlChart = 'http://localhost:8080/api/test/vitals';
 
 
   constructor(private http: HttpClient) { }
 
   // Devuelve el registro más reciente de un cliente especifico
   getDashboard(userId: number): Observable<any> {
+    
+    const url = `${this.apiUrl}/${userId}`;
+    console.log(url);
+    return this.http.get(url);
+  }
+
+   // Devuelve el registro más reciente de un cliente especifico
+   getChart(userId: number): Observable<any> {
     
     const url = `${this.apiUrl}/${userId}`;
     console.log(url);

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType, ChartOptions, ChartDataset } from 'chart.js';
-import * as pluginDataLabels from 'chartjs-plugin-annotation';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 import { DashboardService } from 'src/app/_services/data-client.service';
@@ -70,8 +69,8 @@ export class BarChartComponent {
   private loadData() {
     this.id_cliente = this.storageService.getUser().id;
     this.dashboardService.getDashboard(this.id_cliente).subscribe(data => {
-      this.barChartData.datasets[0].data = data;
-      console.log(data);
+      this.barChartData.datasets[0].data = data[0];
+      console.log(data[0]);
       this.chart?.update();
     });
   }
@@ -87,36 +86,3 @@ export class BarChartComponent {
 }
 
 
-/*
-export class BarChartComponent implements OnInit {
-
-  // variables para la configuración de la gráfica
-  public barChartOptions: ChartOptions = {
-    responsive: true,
-    plugins: {}
-  };
-
-  public barChartLabels: BaseChartDirective["labels"] = ['1', '2', '3', '4', '5', '6', '7', '8']; // etiquetas de la gráfica
-  public barChartType: ChartType = 'bar'; // tipo de gráfica
-  public barChartLegend = true; // leyenda
-  public barChartData: ChartDataset[] = []; // datos de la gráfica
-
-  idCategoria = 7;
-
-  constructor(private userService: UserService) { }
-
-  ngOnInit(): void {
-    // Obtener datos del servicio
-    this.userService.getUserFiles(this.idCategoria).subscribe(data => {
-      // Datos estáticos
-      this.barChartLabels = ['1', '2', '3', '4', '5', '6', '7', '8'];
-      this.barChartData = [
-        { data: [10, 20, 30, 40, 50, 60, 70, 80], label: 'Población' }
-      ];
-      // Datos dinámicos
-      this.barChartLabels = data.labels;
-      this.barChartData = data.chartData;
-    });
-  }
-}
-*/

@@ -20,6 +20,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { Vital1Component } from './reporte/vital1/vital1.component';
 import { BarChartComponent } from './reporte/bar-chart/bar-chart.component';
 import { TablaHistorialComponent } from './reporte/tabla-historial/tabla-historial.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgChartsModule } from 'ng2-charts'
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +47,10 @@ import { TablaHistorialComponent } from './reporte/tabla-historial/tabla-histori
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AngularMaterialsModule
+    AngularMaterialsModule,
+    BrowserAnimationsModule,
+    NgxChartsModule,
+    NgChartsModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
