@@ -8,17 +8,26 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
+
 export class LoginComponent implements OnInit {
+  
   form: any = {
-    username: null,
-    password: null
+    correo: null,
+    contrasena: null
   };
+
+
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
 
   constructor(private authService: AuthService, private storageService: StorageService) { }
+
+
+
 
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
@@ -27,10 +36,16 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(): void {
-    const { username, password } = this.form;
 
-    this.authService.login(username, password).subscribe({
+
+
+
+
+
+  onSubmit(): void {
+    const { correo, contrasena} = this.form;
+
+    this.authService.login(correo, contrasena).subscribe({
       next: data => {
         this.storageService.saveUser(data);
 

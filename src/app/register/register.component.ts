@@ -6,13 +6,25 @@ import { AuthService } from '../_services/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
   form: any = {
-    fullname: null,
     username: null,
-    email: null,
-    password: null
+    nombre: null,
+    apellido_paterno: null,
+    apellido_materno: null,
+    genero: null,
+    correo: null,
+    telefono: null,
+    fecha_nacimiento: null,
+    contrasena: null,
+    ciudad: null,
+    estado: null,
+    codigo_postal: null
   };
+
+ 
+
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
@@ -23,9 +35,22 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { username, email, password } = this.form;
 
-    this.authService.register(username, email, password).subscribe({
+    const {username, nombre, apellido_paterno, apellido_materno, genero, correo, telefono, fecha_nacimiento, contrasena, ciudad, estado, codigo_postal} = this.form;
+
+    this.authService.register(
+      username, 
+      nombre, 
+      apellido_paterno, 
+      apellido_materno, 
+      genero, 
+      correo, 
+      telefono, 
+      fecha_nacimiento, 
+      contrasena, 
+      ciudad, 
+      estado, 
+      codigo_postal).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
