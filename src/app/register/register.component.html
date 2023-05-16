@@ -80,7 +80,7 @@
         <div class="invalid-feedback" *ngIf="apellido_paterno.errors && f.submitted">
           <div *ngIf="apellido_paterno.errors['required']">Debe ingresar un apellido.</div>
           <div *ngIf="apellido_paterno.errors['minlength']">
-            El apellido debe contener al menos dos caracteres.
+            El apellido debe contener al menos 2 caracteres.
           </div>
           <div *ngIf="apellido_paterno.errors['maxlength']">
             El apellido no debe contener más de 20 caracteres.
@@ -101,14 +101,14 @@
         />
         <div class="invalid-feedback" *ngIf="apellido_materno.errors && f.submitted">
           <div *ngIf="apellido_materno.errors['maxlength']">
-            El genero no debe contener más de 20 caracteres.
+            El apellido materno no debe contener más de 20 caracteres.
           </div>
         </div>
       </div>
 
      
 
-      <label for="genero">Genero</label>
+      <label for="genero">Género</label>
       <div class="form-check form-check-inline" aria-label="genero">
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Masculino">
         <label class="form-check-label" for="inlineRadio1">Masculino</label>
@@ -172,7 +172,8 @@
         />
         <div class="invalid-feedback" *ngIf="telefono.errors && f.submitted">
           <div *ngIf="telefono.errors['required']">
-             Se requiere un número telefónico.</div>
+            Se requiere un número telefónico.
+          </div>
           <div *ngIf="telefono.errors['minlength']">
             El número telefónico debe tener 10 dígitos.
           </div>
@@ -260,7 +261,8 @@
         />
         <div class="invalid-feedback" *ngIf="codigo_postal.errors && f.submitted">
           <div *ngIf="codigo_postal.errors['required']">
-             Se requiere un código postal.</div>
+            Se requiere un código postal.
+          </div>
           <div *ngIf="codigo_postal.errors['minlength']">
             El código postal debe tener 5 dígitos.
           </div>
@@ -285,7 +287,9 @@
           [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
         />
         <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
-          <div *ngIf="password.errors['required']">Se requiere contraseña.</div>
+          <div *ngIf="password.errors['required']">
+            Se requiere contraseña.
+          </div>
           <div *ngIf="password.errors['minlength']">
             La contraseña debe de tener al menos 6 caracteres.
           </div>

@@ -25,33 +25,51 @@ export class AuthService {
     );
   }
 
-  register(username: string, 
+  register( 
     nombre:string, 
     apellido_paterno:string, 
     apellido_materno:string,
     genero:string, 
     correo:string, 
-    telefono:string, 
-    fecha_nacimiento:string, 
+    telefono:string,  
     contrasena:string, 
     ciudad:string, 
     estado:string, 
-    codigo_postal:string): Observable<any> {
+    codigo_postal:string,
+    a_nacimiento:string,
+    respuesta_seguridad:string,
+    placeholder:string): Observable<any> {
     return this.http.post(
       AUTH_API + 'signup',
-      {
-        username, 
+      { 
         nombre, 
         apellido_paterno, 
         apellido_materno,
         genero, 
         correo, 
         telefono, 
-        fecha_nacimiento, 
         contrasena, 
         ciudad, 
         estado, 
-        codigo_postal
+        codigo_postal,
+        a_nacimiento, 
+        respuesta_seguridad,
+        placeholder
+      },
+      httpOptions
+    );
+  }
+
+  registerUser( 
+    id_cliente:number, 
+    correo:string, 
+    contrasena:string): Observable<any> {
+    return this.http.post(
+      AUTH_API + 'registerUser',
+      { 
+        id_cliente,
+        correo, 
+        contrasena
       },
       httpOptions
     );
