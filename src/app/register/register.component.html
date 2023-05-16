@@ -12,7 +12,7 @@
       #f="ngForm"
       novalidate
     >
-
+<!---
     <div class="form-group">
       <label for="username">Usuario</label>
       <input
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>  
-    
+--->    
     
       
     <div class="form-group">
@@ -139,23 +139,6 @@
           </div>
         </div>
       </div>
-
-      <div class="form-group">
-        <label for="fecha_nacimiento">Fecha de nacimiento</label>
-        <input
-          type="text"
-          class="form-control"
-          name="fecha_nacimiento"
-          [(ngModel)]="form.fecha_nacimiento"
-          required
-          #fecha_nacimiento="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && fecha_nacimiento.errors }"
-        />
-        <div class="invalid-feedback" *ngIf="fecha_nacimiento.errors && f.submitted">
-          <div *ngIf="fecha_nacimiento.errors['required']">
-             Por favor ingrese su fecha de nacimiento.</div>
-        </div>
-      </div>
       
      <div class="form-group">
         <label for="telefono">Número telefónico</label>
@@ -183,7 +166,45 @@
         </div>
       </div>
 
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors['required']">
+            Se requiere contraseña.
+          </div>
+          <div *ngIf="password.errors['minlength']">
+            La contraseña debe de tener al menos 6 caracteres.
+          </div>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label for="ciudad">Ciudad</label>
+        <input
+          type="text"
+          class="form-control"
+          name="ciudad"
+          [(ngModel)]="form.ciudad"
+          required
+          #ciudad="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted &&  ciudad.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="ciudad.errors && f.submitted">
+          <div *ngIf="ciudad.errors['required']">
+             Se requiere una ciudad.
+          </div>
+        </div>
+      </div>
 
       <select class="form-select" aria-label="genero">
         <label for="estado">Estado</label>
@@ -229,24 +250,6 @@
 
 
       <div class="form-group">
-        <label for="ciudad">Ciudad</label>
-        <input
-          type="text"
-          class="form-control"
-          name="ciudad"
-          [(ngModel)]="form.ciudad"
-          required
-          #ciudad="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted &&  ciudad.errors }"
-        />
-        <div class="invalid-feedback" *ngIf="ciudad.errors && f.submitted">
-          <div *ngIf="ciudad.errors['required']">
-             Se requiere una ciudad.
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
         <label for="codigo_postal"> Código Postal</label>
         <input
           type="text"
@@ -272,29 +275,41 @@
         </div>
       </div>
 
-     
-     
       <div class="form-group">
-        <label for="password">Contraseña</label>
+        <label for="fecha_nacimiento">Año de nacimiento</label>
         <input
-          type="password"
+          type="text"
           class="form-control"
-          name="password"
-          [(ngModel)]="form.password"
+          name="fecha_nacimiento"
+          [(ngModel)]="form.fecha_nacimiento"
           required
-          minlength="6"
-          #password="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+          #fecha_nacimiento="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && fecha_nacimiento.errors }"
         />
-        <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
-          <div *ngIf="password.errors['required']">
-            Se requiere contraseña.
-          </div>
-          <div *ngIf="password.errors['minlength']">
-            La contraseña debe de tener al menos 6 caracteres.
+        <div class="invalid-feedback" *ngIf="fecha_nacimiento.errors && f.submitted">
+          <div *ngIf="fecha_nacimiento.errors['required']">
+             Por favor ingrese su fecha de nacimiento.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="respuesta_seguridad">Respuesta</label>
+        <input
+          type="text"
+          class="form-control"
+          name="respuesta_seguridad"
+          [(ngModel)]="form.respuesta_seguridad"
+          required
+          #respuesta_seguridad="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted &&  respuesta_seguridad.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="respuesta_seguridad.errors && f.submitted">
+          <div *ngIf="respuesta_seguridad.errors['required']">
+             Se requiere una respuesta.
           </div>
         </div>
       </div>
+
 
       
       <div class="form-group">

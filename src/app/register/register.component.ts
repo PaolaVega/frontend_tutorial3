@@ -36,21 +36,22 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
 
-    const {username, nombre, apellido_paterno, apellido_materno, genero, correo, telefono, fecha_nacimiento, contrasena, ciudad, estado, codigo_postal} = this.form;
+    const {nombre, apellido_paterno, apellido_materno, genero, correo, telefono, contrasena, ciudad, estado, codigo_postal,a_nacimiento,respuesta_seguridad,placeholder} = this.form;
 
     this.authService.register(
-      username, 
-      nombre, 
-      apellido_paterno, 
-      apellido_materno, 
-      genero, 
-      correo, 
-      telefono, 
-      fecha_nacimiento, 
-      contrasena, 
-      ciudad, 
-      estado, 
-      codigo_postal).subscribe({
+        nombre, 
+        apellido_paterno, 
+        apellido_materno,
+        genero, 
+        correo, 
+        telefono, 
+        contrasena, 
+        ciudad, 
+        estado, 
+        codigo_postal,
+        a_nacimiento, 
+        respuesta_seguridad,
+        placeholder).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
