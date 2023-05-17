@@ -24,13 +24,16 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private storageService: StorageService) { }
+  constructor(private authService: AuthService, private storageService: StorageService, private router: Router) { }
 
+  private dash_url = 'dashboard/'
 
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
       this.roles = this.storageService.getUser().roles;
+      const id_cliente = this.storageService.getUser().id;
+      this.router.navigate([`${this.dash_url}/${id_cliente}`]);
     }
   }
 
