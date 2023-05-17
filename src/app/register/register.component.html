@@ -107,7 +107,7 @@
       </div>
 
      
-
+<!---
       <label for="genero">Género</label>
       <div class="form-check form-check-inline" aria-label="genero">
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Masculino">
@@ -117,14 +117,41 @@
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Femenino">
         <label class="form-check-label" for="inlineRadio2">Femenino</label>
       </div>
+--->  
+
 
       <div class="form-group">
-        <label for="email">Correo electrónico</label>
+        <label for="genero">Genero</label>
+        <input
+          type="text"
+          class="form-control"
+          name="genero"
+          [(ngModel)]="form.genero"
+          required
+          minlength="3"
+          maxlength="20"
+          #genero="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && genero.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="genero.errors && f.submitted">
+          <div *ngIf="genero.errors['required']">Se requiere un usuario</div>
+          <div *ngIf="genero.errors['minlength']">
+            El nombre debe contener al menos 2 caracteres.
+          </div>
+          <div *ngIf="genero.errors['maxlength']">
+            El nombre no debe contener más de 20 caracteres.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
         <input
           type="email"
           class="form-control"
           name="email"
-          [(ngModel)]="form.email"
+          [(ngModel)]="form.correo"
           required
           email
           #email="ngModel"
@@ -172,7 +199,7 @@
           type="password"
           class="form-control"
           name="password"
-          [(ngModel)]="form.password"
+          [(ngModel)]="form.contrasena"
           required
           minlength="6"
           #password="ngModel"
@@ -205,7 +232,7 @@
           </div>
         </div>
       </div>
-
+<!---
       <select class="form-select" aria-label="genero">
         <label for="estado">Estado</label>
         <input
@@ -247,6 +274,32 @@
         <option value="30">Yucatán</option>
         <option value="31">Zacatecas</option>
       </select>
+--->
+
+
+      <div class="form-group">
+        <label for="estado">Estado</label>
+        <input
+          type="text"
+          class="form-control"
+          name="estado"
+          [(ngModel)]="form.estado"
+          required
+          minlength="3"
+          maxlength="20"
+          #estado="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && estado.errors }"
+        />
+        <div class="invalid-feedback" *ngIf="estado.errors && f.submitted">
+          <div *ngIf="estado.errors['required']">Se requiere un usuario</div>
+          <div *ngIf="estado.errors['minlength']">
+            El nombre debe contener al menos 2 caracteres.
+          </div>
+          <div *ngIf="estado.errors['maxlength']">
+            El nombre no debe contener más de 20 caracteres.
+          </div>
+        </div>
+      </div>
 
 
       <div class="form-group">
@@ -276,18 +329,18 @@
       </div>
 
       <div class="form-group">
-        <label for="fecha_nacimiento">Año de nacimiento</label>
+        <label for="a_nacimiento">Año de nacimiento</label>
         <input
           type="text"
           class="form-control"
-          name="fecha_nacimiento"
-          [(ngModel)]="form.fecha_nacimiento"
+          name="a_nacimiento"
+          [(ngModel)]="form.a_nacimiento"
           required
-          #fecha_nacimiento="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && fecha_nacimiento.errors }"
+          #a_nacimiento="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && a_nacimiento.errors }"
         />
-        <div class="invalid-feedback" *ngIf="fecha_nacimiento.errors && f.submitted">
-          <div *ngIf="fecha_nacimiento.errors['required']">
+        <div class="invalid-feedback" *ngIf="a_nacimiento.errors && f.submitted">
+          <div *ngIf="a_nacimiento.errors['required']">
              Por favor ingrese su fecha de nacimiento.</div>
         </div>
       </div>

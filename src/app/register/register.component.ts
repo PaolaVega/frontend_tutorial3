@@ -9,18 +9,19 @@ import { AuthService } from '../_services/auth.service';
 
 export class RegisterComponent implements OnInit {
   form: any = {
-    username: null,
     nombre: null,
     apellido_paterno: null,
     apellido_materno: null,
     genero: null,
     correo: null,
     telefono: null,
-    fecha_nacimiento: null,
     contrasena: null,
     ciudad: null,
     estado: null,
-    codigo_postal: null
+    codigo_postal: null,
+    a_nacimiento: null,
+    respuesta_seguridad: null,
+    placeholder: null
   };
 
  

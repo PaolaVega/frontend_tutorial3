@@ -22,7 +22,6 @@ export class DashboardService {
   getDashboard(userId: number): Observable<any> {
     
     const url = `${this.apiUrl}/${userId}`;
-    console.log(url);
     return this.http.get(url);
   }
 
@@ -30,7 +29,6 @@ export class DashboardService {
    getChart(userId: number): Observable<any> {
     
     const url = `${this.apiUrl}/${userId}`;
-    console.log(url);
     return this.http.get(url);
   }
 
