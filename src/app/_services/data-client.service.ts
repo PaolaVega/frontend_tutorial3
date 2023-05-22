@@ -11,9 +11,8 @@ import { Report } from '../models/report.model';
 
 export class DashboardService {
 
- // Cambia esto por la URL de tu API
+ 
  private apiUrl = 'http://localhost:8080/api/test/vitals';
- private apiUrlChart = 'http://localhost:8080/api/test/vitals';
 
 
   constructor(private http: HttpClient) { }
@@ -24,13 +23,5 @@ export class DashboardService {
     const url = `${this.apiUrl}/${userId}`;
     return this.http.get(url);
   }
-
-   // Devuelve el registro más reciente de un cliente especifico
-   getChart(userId: number): Observable<any> {
-    
-    const url = `${this.apiUrl}/${userId}`;
-    return this.http.get(url);
-  }
-
   
 }

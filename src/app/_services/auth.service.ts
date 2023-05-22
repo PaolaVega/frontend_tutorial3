@@ -60,21 +60,6 @@ export class AuthService {
     );
   }
 
-  /*registerUser( 
-    id_cliente:number, 
-    correo:string, 
-    contrasena:string): Observable<any> {
-    return this.http.post(
-      AUTH_API + 'registerUser',
-      { 
-        id_cliente,
-        correo, 
-        contrasena
-      },
-      httpOptions
-    );
-  }*/
-
   logout(): Observable<any> {
     return this.http.post(AUTH_API + 'signout', { }, httpOptions);
   }

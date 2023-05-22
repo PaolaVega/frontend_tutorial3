@@ -1,5 +1,4 @@
 export interface Medicion {
-    //id?: number;
     Ritmo: number;
     Frec: number;
     Peso: number;

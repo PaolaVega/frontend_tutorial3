@@ -1,5 +1,5 @@
 export class Report{
-    Id_cliente?: any; // Cambia esto por el ID del usuario que deseas mostrar
+    Id_cliente?: any;
     ritmo_cardiaco?: number;
     frecuencia_respiratoria?: number;
     peso?: number;
