@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private storageService: StorageService, private router: Router) { }
 
   private dash_url = 'dashboard/'
-  private pharmacy_url = '/admin'
+  private pharmacy_url = '/pharmacy'
   private gov_url = '/mod'
 
   ngOnInit(): void {
@@ -38,10 +38,10 @@ export class LoginComponent implements OnInit {
       const id_cliente = this.storageService.getUser().id;
       console.log(this.roles[0]);
 
-      const admin = ['ROLE_ADMIN'];
-      const mod = ['ROLE_MODERATOR'];
+      const pharmacy = ['ROLE_PHARMACY'];
+      const mod = ['ROLE_GOV'];
 
-      if(this.roles == admin){
+      if(this.roles == pharmacy){
         this.router.navigate([`${this.pharmacy_url}`]);
       }
       else if (this.roles == mod) {

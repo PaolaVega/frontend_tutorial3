@@ -18,11 +18,11 @@ export class UserService {
     return this.http.get(API_URL + 'user', { responseType: 'text' });
   }
   
-  getModeratorBoard(): Observable<any> {
-    return this.http.get(API_URL + 'mod', { responseType: 'text' });
+  getGovBoard(): Observable<any> {
+    return this.http.get(API_URL + 'gov', { responseType: 'text' });
   }
 
-  getAdminBoard(): Observable<any> {
-    return this.http.get(API_URL + 'admin', { responseType: 'text' });
+  getPharmacyBoard(): Observable<any> {
+    return this.http.get(API_URL + 'pharmacy', { responseType: 'text' });
   }
 }

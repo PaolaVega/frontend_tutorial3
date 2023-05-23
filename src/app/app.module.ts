@@ -9,8 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardPharmacyComponent } from './board-pharmacy/board-pharmacy.component';
+import { BoardGovComponent } from './board-gov/board-gov.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
@@ -34,8 +34,8 @@ import { NgChartsModule } from 'ng2-charts'
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
-    BoardAdminComponent,
-    BoardModeratorComponent,
+    BoardPharmacyComponent,
+    BoardGovComponent,
     BoardUserComponent,
     NavbarComponent,
     Vital1Component,

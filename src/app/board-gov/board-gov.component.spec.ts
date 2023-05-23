@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoardAdminComponent } from './board-admin.component';
 
-describe('BoardAdminComponent', () => {
-  let component: BoardAdminComponent;
-  let fixture: ComponentFixture<BoardAdminComponent>;
+import { BoardGovComponent } from './board-gov.component';
+
+describe('BoardGovComponent', () => {
+  let component: BoardGovComponent;
+  let fixture: ComponentFixture<BoardGovComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardAdminComponent ]
+      declarations: [ BoardGovComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BoardAdminComponent);
+    fixture = TestBed.createComponent(BoardGovComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,8 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardGovComponent } from './board-gov/board-gov.component';
+import { BoardPharmacyComponent } from './board-pharmacy/board-pharmacy.component';
 
 import { Vital1Component } from './reporte/vital1/vital1.component';
 
@@ -20,8 +20,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent },
+  { path: 'mod', component: BoardGovComponent },
+  { path: 'pharmacy', component: BoardPharmacyComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'dashboard/:userId', component: Vital1Component},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
