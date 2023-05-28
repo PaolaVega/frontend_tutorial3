@@ -38,7 +38,14 @@ export class AuthService {
     codigo_postal:string,
     a_nacimiento:string,
     respuesta_seguridad:string,
-    placeholder:string): Observable<any> {
+    placeholder:string,
+    nombre_contacto_confianza:string,
+    apellido_paterno_contacto_confianza:string,
+    apellido_materno_contacto_confianza:string,
+    relacion_cliente:string,
+    tel_contacto_confianza:string,
+    correo_contacto_confianza:string,
+    contrasena_contacto_confianza:string): Observable<any> {
     return this.http.post(
       AUTH_API + 'signup',
       { 
@@ -54,7 +61,14 @@ export class AuthService {
         codigo_postal,
         a_nacimiento, 
         respuesta_seguridad,
-        placeholder
+        placeholder,
+        nombre_contacto_confianza,
+        apellido_paterno_contacto_confianza,
+        apellido_materno_contacto_confianza,
+        relacion_cliente,
+        tel_contacto_confianza,
+        correo_contacto_confianza,
+        contrasena_contacto_confianza
       },
       httpOptions
     );

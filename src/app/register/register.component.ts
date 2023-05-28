@@ -21,7 +21,14 @@ export class RegisterComponent implements OnInit {
     codigo_postal: null,
     a_nacimiento: null,
     respuesta_seguridad: null,
-    placeholder: null
+    placeholder: null,
+    nombre_contacto_confianza: null,
+    apellido_paterno_contacto_confianza: null,
+    apellido_materno_contacto_confianza: null,
+    relacion_cliente: null,
+    tel_contacto_confianza: null,
+    correo_contacto_confianza: null,
+    contrasena_contacto_confianza: null
   };
 
  
@@ -30,6 +37,7 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
+
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -37,7 +45,23 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
 
-    const {nombre, apellido_paterno, apellido_materno, genero, correo, telefono, contrasena, ciudad, estado, codigo_postal,a_nacimiento,respuesta_seguridad,placeholder} = this.form;
+    const {nombre,
+          apellido_paterno, 
+          apellido_materno, 
+          genero, correo,
+          telefono, contrasena, 
+          ciudad, estado, 
+          codigo_postal,
+          a_nacimiento, 
+          respuesta_seguridad,
+          placeholder,
+          nombre_contacto_confianza,
+          apellido_paterno_contacto_confianza,
+          apellido_materno_contacto_confianza,
+          relacion_cliente,
+          tel_contacto_confianza,
+          correo_contacto_confianza,
+          contrasena_contacto_confianza} = this.form;
 
     this.authService.register(
         nombre, 
@@ -52,7 +76,14 @@ export class RegisterComponent implements OnInit {
         codigo_postal,
         a_nacimiento, 
         respuesta_seguridad,
-        placeholder).subscribe({
+        placeholder,
+        nombre_contacto_confianza,
+        apellido_paterno_contacto_confianza,
+        apellido_materno_contacto_confianza,
+        relacion_cliente,
+        tel_contacto_confianza,
+        correo_contacto_confianza,
+        contrasena_contacto_confianza).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
