@@ -17,7 +17,12 @@ export class TablaHistorialComponent implements OnInit{
   ngOnInit(): void {
     this.id_cliente = this.storageService.getUser().id;
     this.dashboardService.getDashboard(this.id_cliente).subscribe(res => {
-      this.datos = res;
+      this.datos = res.map((item: any) =>{
+        const fecha = new Date(item.date_time);
+        const fechaFormateada = fecha.toLocaleString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+        return { ...item, date_time: fechaFormateada }; 
+
+      });
     });
   }
 

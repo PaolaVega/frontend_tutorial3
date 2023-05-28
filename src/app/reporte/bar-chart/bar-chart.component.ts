@@ -26,7 +26,7 @@ export class BarChartComponent {
         },
       },
       y: {
-        min: 10,
+        min: 0,
         ticks: {
           font: {
             size: 10,
@@ -41,6 +41,7 @@ export class BarChartComponent {
       datalabels: {
         anchor: 'end',
         align: 'end',
+        display: true,
       },
     },
   };
@@ -53,8 +54,8 @@ export class BarChartComponent {
   public barChartData: ChartData<'bar'> = {
     labels: [],
     datasets: [
-      { data: [], label: 'Tú', backgroundColor: '#3CF17E' },
-      { data: [ 72.9, 14.6, 63.9, 22.7, 95.1, 35.45, 126.1, 169.9], label: 'Población'}
+      { data: [], label: 'Tú', backgroundColor: '#a4cda4'},
+      { data: [ 72.9, 14.6, 63.9, 22.7, 95.1, 35.45, 126.1 ], label: 'Población', backgroundColor: '#5da337'}
     ],
   };
 
@@ -66,24 +67,23 @@ export class BarChartComponent {
 
   id_cliente!: number;
 
-
-
-
   private loadData() {
     this.id_cliente = this.storageService.getUser().id;
-    this.dashboardService.getDashboard(this.id_cliente).subscribe(data => {
+    this.dashboardService.getChartData(this.id_cliente).subscribe(data => {
+      
+      
+      /*
       //console.log(data[0]);
       var data_chart =[data[0].frecuencia_respiratoria,      
                         data[0].indice_masa_corpora,                        
-                        data[0].peso,
-                        data[0].presion_sanguinea_diastolica,                        
+                        data[0].peso,                       
                         data[0].presion_sanguinea_sistolica,
                         data[0].ritmo_cardiaco,                        
                         data[0].saturacion_oxigeno,
                         data[0].temperatura,              
       ];
-      console.log(data_chart);
-      
+      console.log('DATA CHART', data_chart);
+      */
       
       this.barChartData.datasets[0].data = data[0];
       this.chart?.update();
@@ -99,5 +99,4 @@ export class BarChartComponent {
     console.log(event, active);
   }
 }
-
 

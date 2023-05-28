@@ -13,7 +13,7 @@ export class DashboardService {
 
  
  private apiUrl = 'http://localhost:8080/api/test/vitals';
-
+ private apiUrl2 = 'http://localhost:8080/api/test/vitalsChart'
 
   constructor(private http: HttpClient) { }
 
@@ -23,5 +23,9 @@ export class DashboardService {
     const url = `${this.apiUrl}/${userId}`;
     return this.http.get(url);
   }
-  
+
+  getChartData(userId: number): Observable<any> {
+    const url = `${this.apiUrl2}/${userId}`;
+    return this.http.get(url);
+  }
 }
