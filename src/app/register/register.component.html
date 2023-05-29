@@ -106,6 +106,15 @@
         </div>
       </div>
 
+
+      <div class="form-group">
+        <label for="genero">Sexo</label>
+        <select class="form-control" name="genero" [(ngModel)]="form.genero">
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
      
 <!---
       <label for="genero">Género</label>
@@ -119,7 +128,7 @@
       </div>
 --->  
 
-
+<!--
       <div class="form-group">
         <label for="genero">Genero</label>
         <input
@@ -143,7 +152,8 @@
           </div>
         </div>
       </div>
-
+-->
+    
 
       <div class="form-group">
         <label for="correo">Correo electrónico</label>
@@ -350,7 +360,45 @@
       </select>
 --->
 
+      <div class="form-group">
+        <label for="estado">Estado</label>
+        <select class="form-control" name="estado" [(ngModel)]="form.estado">
+          <option value="Aguascalientes">Aguascalientes</option>
+          <option value="Baja California">Baja California</option>
+          <option value="Baja California Sur">Baja California Sur</option>
+          <option value="Campeche">Campeche</option>
+          <option value="Chiapas">Chiapas</option>
+          <option value="Chihuahua">Chihuahua</option>
+          <option value="Ciudad de México">Ciudad de México</option>
+          <option value="Coahuila">Coahuila</option>
+          <option value="Colima">Colima</option>
+          <option value="Durango">Durango</option>
+          <option value="Estado de México">Estado de México</option>
+          <option value="Guanajuato">Guanajuato</option>
+          <option value="Guerrero">Guerrero</option>
+          <option value="Hidalgo">Hidalgo</option>
+          <option value="Jalisco">Jalisco</option>
+          <option value="Michoacán">Michoacán</option>
+          <option value="Morelos">Morelos</option>
+          <option value="Nayarit">Nayarit</option>
+          <option value="Nuevo León">Nuevo León</option>
+          <option value="Oaxaca">Oaxaca</option>
+          <option value="Puebla">Puebla</option>
+          <option value="Querétaro">Querétaro</option>
+          <option value="San Luis Potosí">San Luis Potosí</option>
+          <option value="Sinaloa">Sinaloa</option>
+          <option value="Sonora">Sonora</option>
+          <option value="Tabasco">Tabasco</option>
+          <option value="Tamaulipas">Tamaulipas</option>
+          <option value="Tlaxcala">Tlaxcala</option>
+          <option value="Veracruz">Veracruz</option>
+          <option value="Yucatán">Yucatán</option>
+          <option value="Zacatecas">Zacatecas</option>          
+        </select>
+      </div>
 
+
+      <!--
       <div class="form-group">
         <label for="estado">Estado</label>
         <input
@@ -374,7 +422,7 @@
           </div>
         </div>
       </div>
-
+      -->
 
       <div class="form-group">
         <label for="codigo_postal"> Código Postal</label>
@@ -420,6 +468,22 @@
       </div>
 
       <div class="form-group">
+        <label for="pregunta_seguridad">Pregunta de seguridad</label>
+        <select class="form-control" name="pregunta_seguridad" [(ngModel)]="form.pregunta_seguridad">
+          <option value="1">¿Cuál es el nombre de tu primer mascota?</option>         
+          <option value="2">¿A qué secundaria fuiste?</option>         
+          <option value="3">¿Cuál es tu equipo deportivo favorito?</option>         
+          <option value="4">¿Cuál es tu color favorito?</option>         
+          <option value="5">¿En qué ciudad nació tu papá?</option>         
+          <option value="6">¿Quién es el héroe de tu infancia?</option>         
+          <option value="7">¿Cómo decían de pequeño?</option>         
+          <option value="8">¿Cuál es tu comida favorita?</option>         
+          <option value="9">¿Cuál es tu película favorita?</option>         
+        </select>
+      </div>
+
+
+      <div class="form-group">
         <label for="respuesta_seguridad">Respuesta</label>
         <input
           type="text"
@@ -436,9 +500,6 @@
           </div>
         </div>
       </div>
-
-
-
 
 
       <div class="form-group">
