@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
       this.isLoggedIn = true;
       this.roles = this.storageService.getUser().roles;
       const id_cliente = this.storageService.getUser().id;
-      console.log(this.roles[0]);
 
       const pharmacy = ['ROLE_PHARMACY'];
       const mod = ['ROLE_GOV'];
