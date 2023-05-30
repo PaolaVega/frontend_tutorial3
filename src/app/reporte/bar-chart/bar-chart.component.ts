@@ -84,7 +84,7 @@ export class BarChartComponent {
       ];
       console.log('DATA CHART', data_chart);
       */
-      
+      console.log(data[0]);
       this.barChartData.datasets[0].data = data[0];
       this.chart?.update();
     });

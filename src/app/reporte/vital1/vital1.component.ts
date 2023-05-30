@@ -23,9 +23,7 @@ export class Vital1Component implements OnInit {
 
   ngOnInit() {
     this.Id_cliente = this.storageService.getUser().id;
-    console.log(this.Id_cliente);
     this.dashboardService.getDashboard(this.Id_cliente).subscribe(user => {
-      console.log(user);
       this.userRitmo = user[0].ritmo_cardiaco;
       this.userFrecuencia = user[0].frecuencia_respiratoria;
       this.userPeso = user[0].peso;
